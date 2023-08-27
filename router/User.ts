@@ -1,8 +1,8 @@
 import express , {Request,Response} from "express"
 import {check , validationResult } from 'express-validator';
-const myWallet: express.Router = express.Router()
+const User: express.Router = express.Router()
 
-myWallet.post("/user",
+User.post("/",
 [
     check('address').notEmpty().withMessage('Address cannot be empty')
 ]
@@ -17,4 +17,4 @@ myWallet.post("/user",
     res.status(201).send("done")
 
 })
-export default myWallet;
+export default User;
